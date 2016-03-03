@@ -1,0 +1,16 @@
+initialgasmass           1.40d5              -
+minstellarmass           1.7                 ignore contribution outside this range
+maxstellarmass           6.00                ignore contribution outside this range
+maxtime                  1.00e+09            end simulation here
+maxmodelnum              500000              last model number
+initialcompscalez        1.0000              scale initial comp metals           
+initialtimestep          1.0e+2              starting dt
+mintimestep              1.0e+2              - 
+maxtimestep              1.0e+8              - 
+timestepgrowthrate       0.05                fractional increase per timestep
+maxchangemgas            0.05                restep if fractional change too high
+maxchangeser             0.08                restep if fractional change too high
+serintegralsteps         40000               initial number of steps for SER integral
+sfrefficiency            2.0d-5              as a fraction of gas mass per year
+sfrstartmgasabove        1.2d+5              Mgas above will start SF
+sfrendmgasbelow          1.0d+4              Mgas below this will end SF
