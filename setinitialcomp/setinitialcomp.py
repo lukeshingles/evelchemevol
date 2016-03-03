@@ -138,7 +138,7 @@ with open('initial_comp_solar_a0.dat','r') as infile:
             if row[0].strip(' ') == 'p':
                 row[1] = '{0:14.4E}'.format(outputhydrogenfrac)
             elif row[0].strip(' ') == 'he4':
-                    row[1] = '{0:14.4E}'.format(outputheliumfrac/4.0)
+                row[1] = '{0:14.4E}'.format(outputheliumfrac/4.0)
             elif elcode in elfactor:
                 row[1] = '{0:14.4E}'.format(float(row[1])*elfactor[elcode]*zfactor)
             else:
