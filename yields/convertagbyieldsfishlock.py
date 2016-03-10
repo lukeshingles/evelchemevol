@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 from collections import OrderedDict
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
 if False:
     agbYieldFiles = ('yields-m1.0z001.pmz2e-3.dat',
@@ -73,8 +77,8 @@ with open('yields.txt', 'w') as fileout:
 
     for i in range(len(agbModelNames)):
         fileout.write((agbModelNames[i]).ljust(25))
-        fileout.write(("%6.2f" % float(agbModelNames[i][1:5].rstrip('z'))).rjust(14))   # mass
-        fileout.write(("%6.2e" % 0.001).rjust(14))   # metallicity
+        fileout.write(("%6.2f" % float(agbModelNames[i][1:5].rstrip('z'))).rjust(14)) # mass
+        fileout.write(("%6.2e" % 0.001).rjust(14)) # metallicity
         fileout.write(("%6.3f" % (initMass[i]  - ejectaMass[i])).rjust(14))   # remnant mass
         fileout.write(("%.6e" % lifetime[i]).rjust(14))
         fileout.write("\n")
