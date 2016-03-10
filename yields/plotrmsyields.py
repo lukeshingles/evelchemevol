@@ -4,11 +4,15 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
-# absolute elemental yield in solar masses  
+# absolute elemental yield in solar masses
 def elYield(i,symbol):
     yieldsum = 0.0
     foundAtLeastOne = False
@@ -161,7 +165,7 @@ for i in range(1,len(modelname)):
     #    continue
     #if modelname[i][4:7] != 'zm5':
     #    continue
-    
+
     if modelname[i].startswith('G015'):
         femodelnum = 31
     elif modelname[i].startswith('G020'):
@@ -203,7 +207,7 @@ for i in range(1,len(modelname)):
         for Z in range(37,83):
             XtoFe = solarBracket(i,elements[Z],femodelnum,'fe')
             #XtoFe = elNumbertoFe(i,elements[Z],femodelnum)
-            
+
             #print "[" + elements[Z] + "/Fe]", XtoFe
             if XtoFe != -99 and XtoFe != 0:
                 listX.append(Z)
@@ -212,7 +216,7 @@ for i in range(1,len(modelname)):
             linelabel = relabel[modelname[i]]
         else:
             linelabel = modelname[i]
-        
+
         ax.plot(listX, listY, color=colorList[colorNumber % len(colorList)], marker=markerList[colorNumber % len(markerList)], markersize=7, markeredgewidth=0, lw=2,linestyle='-', label=linelabel)
         colorNumber += 1
 
@@ -226,7 +230,7 @@ for i in range(len(listY)):
     #ax.annotate(elements[listX[i]], fontsize=14,
     #               xy = (listX[i], listY[i]), xytext = (0, 10),
     #                textcoords = 'offset points', ha = 'center', va = 'bottom')
-    
+
         ax.annotate(elements[listX[i]], fontsize=12, color='red',
                     xy = (listX[i], -5.5), xytext = (0, 15+(i % 2)*12),
                     textcoords = 'offset points', ha = 'center', va = 'top')

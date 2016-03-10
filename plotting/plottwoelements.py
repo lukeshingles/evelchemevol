@@ -25,7 +25,7 @@ for i in range(1):
         axisx = "[Fe/H]"
         xmin = -0.85
         xmax = 0.8
-        
+
     xvalues = []
     yvalues = []
 
@@ -57,7 +57,8 @@ for i in range(1):
     #for i in range(1,len(header_row)):
     #    colors = ['r','g','b','orange','black','purple']
     ax.plot(xvalues, yvalues, color='black', marker='None', lw=1.5)
-    ax.plot(xvalues[0], yvalues[0], color='blue', marker='o', markersize=6, markeredgewidth=0,label="Initial")
+    ax.plot(xvalues[0], yvalues[0], color='blue', marker='o', markersize=6,
+            markeredgewidth=0,label="Initial")
 
     #ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
 

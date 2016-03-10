@@ -4,9 +4,13 @@ import struct
 import glob
 import os
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
 #(yval, k14alpha, s15alpha) = ('24', '4', '0')
 
@@ -31,7 +35,7 @@ lifetime = [
 
 for m in range(len(modelNames)):
     evmodelname = modelNames[m].split('a')[0]
-    
+
     with open(os.path.join('data/fruity-z0003',yieldfilenames[m]),'r') as fyields:
         print("reading " + yieldfilenames[m])
         fyields.readline()
@@ -48,13 +52,13 @@ for m in range(len(modelNames)):
             if row[0] == 'Pb05': elmsymbol = 'Tl'
             if row[0] == 'Bi10': elmsymbol = 'Pb'
             if row[0] == 'Po10': elmsymbol = 'Pb'
-            
+
             massnumber = int(row[1])    #(A) the number of nucleons
             massyield = float(row[3])   #absolute stellar yield in solar masses
             ejectaMass[m] += massyield
-            
+
             speciesname = '{:}{:d}'.format(elmsymbol.lower(),massnumber)
-            
+
             if elmsymbol == 'H':
                 elmsymbol = 'p'
                 speciesname = 'p'

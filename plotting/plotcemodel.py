@@ -35,7 +35,8 @@ for i in range(2,len(data)):
     if header_row[i] == "[Fe/H]":
         header_row[i] = "10^[Fe/H]"
     colors = ['r','g','b','orange','black','purple']
-    ax.plot(data['time'], data[column], color=colors[(i-1) % len(colors)-1], marker='o', markersize=0, lw=1.5, label=header_row[i])
+    ax.plot(data['time'], data[column], color=colors[(i-1) % len(colors)-1],
+            marker='o', markersize=0, lw=1.5, label=header_row[i])
 
 fs = 9
 ax.legend(loc='best',handlelength=2.5,frameon=False,ncol=1,prop={'size':fs-1})

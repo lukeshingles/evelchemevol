@@ -4,13 +4,18 @@ import sys
 import numpy as np
 from collections import OrderedDict
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
 # initial mass fraction
 
-agbYieldFiles = ('m1.25_pmz2e-3.dat','m2.5_pmz2e-3.dat','m3.5_pmz1e-3.dat','m5.0_nopmz.dat','m6.5_nopmz.dat')
+agbYieldFiles = ('m1.25_pmz2e-3.dat','m2.5_pmz2e-3.dat','m3.5_pmz1e-3.dat',
+                 'm5.0_nopmz.dat','m6.5_nopmz.dat')
 agbModelNames = map(lambda x:x[:-4],agbYieldFiles)
 
 yields = [OrderedDict({}) for k in range(len(agbModelNames))]
