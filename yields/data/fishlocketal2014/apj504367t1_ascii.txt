@@ -1,0 +1,33 @@
+Table 1
+Evolutionary Properties of the Calculated Z = 0.001 Stellar Models
+
+M_initial^a	M_final^b	M_core^c	M_env^d	TPs^e	TDUs^f	lambda_max^g	 ^h	 ^i	M_TDU^j	
+(M_sun)	(M_sun)	(M_sun)	(M_sun)	(10^6 K)	(10^6 K)	(M_sun)	
+1	0.678	0.667	0.011	17	2	0.08	1.4	284.1	0.002	
+1.25	0.669	0.649	0.020	14	8	0.16	2.2	271.8	0.009	
+1.5	0.657	0.646	0.011	14	10	0.37	6.7	275.4	0.026	
+2	0.668	0.661	0.007	17	14	0.73	4.2	294.2	0.095	
+2.25	0.839	0.673	0.166	17	16	0.82	5.6	305.4	0.132	
+2.5	0.948	0.709	0.239	17	16	0.92	9.2	318.5	0.138	
+2.75	1.057	0.746	0.312	18	18	0.97	15.8	320.8	0.138	
+3	1.189	0.792	0.397	22	20	1.00	28.3	332.5	0.124	
+3.25	1.403	0.843	0.561	23	22	1.00	48.9	350.5	0.093	
+3.5	1.176	0.857	0.319	27	27	0.99	58.5	361.3	0.104	
+4	1.726	0.883	0.843	68	68	1.02	82.9	361.3	0.231	
+4.5	1.659	0.908	0.750	79	78	0.97	87.6	356.6	0.210	
+5	1.740	0.938	0.802	94	93	0.95	92.5	361.2	0.194	
+5.5	1.962	0.972	0.990	100	99	0.93	98.1	363.0	0.151	
+6	1.725	1.015	0.709	108	105	0.92	104.8	376.5	0.107	
+7	2.062	1.145	0.917	135	132	0.86	125.0	392.4	0.034	
+
+Notes.
+a Initial mass.
+b Final mass.
+c Final core mass.
+d Final envelope mass.
+e Number of TPs computed.
+f Number of TDU episodes.
+g Maximum efficiency of TDU.
+h Maximum temperature reached at the base of the convective envelope.
+i Maximum temperature reached at the base of the He-intershell.
+j Total amount of mass mixed into the envelope through TDU.
