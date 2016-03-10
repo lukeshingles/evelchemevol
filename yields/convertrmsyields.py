@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 import math
 import sys
-import numpy as np
 from collections import OrderedDict
 
 # index in this list is the atomic number Z
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
 def absoluteYield(i,species):
     return yields[i][species] + (initialMassFrac[i][species] * ejectaMass[i])
@@ -209,7 +212,7 @@ fyields.write(str(len(selectedmodels)) + "\n")
 
 for i in selectedmodels:
     remnantMassThisModel = remnantMass[i]
-    
+
     if mode == modeS0:
         # the 40 Msun model with zero rotation has to be fudged
         if i == 29: #zm5
