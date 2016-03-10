@@ -3,11 +3,15 @@ import math
 import sys
 import numpy as np
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
-# absolute elemental yield in solar masses  
+# absolute elemental yield in solar masses
 def elYield(i,symbol):
     yieldsum = 0.0
     foundAtLeastOne = False
@@ -169,7 +173,7 @@ for i in range(1,hirschimodelcount+1):
     #    continue
     #if modelname[i][4:7] != 'zm5':
     #    continue
-    
+
     if modelname[i].startswith('G015'):
         femodelnum = 31
     elif modelname[i].startswith('G020'):
@@ -199,7 +203,7 @@ for i in range(1,len(modelname)):
         for Z in range(37,83):
             XtoFe = solarBracket(i,elements[Z],femodelnum,'fe')
             #XtoFe = elNumbertoFe(i,elements[Z],femodelnum)
-            
+
             #print "[" + elements[Z] + "/Fe]", XtoFe
             if XtoFe != -99 and XtoFe != 0:
                 listX.append(Z)
@@ -208,8 +212,7 @@ for i in range(1,len(modelname)):
             linelabel = relabel[modelname[i]]
         else:
             linelabel = modelname[i]
-        
+
         #print "#" + linelabel
         #print "#Z, [Fe/H]"
         #print "\n".join(map(lambda x,y:str(x)+",%0.2f"%y,listX, listY))
-

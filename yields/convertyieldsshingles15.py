@@ -2,9 +2,13 @@
 from collections import OrderedDict
 import struct
 
-elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
-        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
-        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn','Fr','Ra','Ac')
+elements = ('','H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si',
+        'P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu',
+        'Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc',
+        'Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La',
+        'Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+        'Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At',
+        'Rn','Fr','Ra','Ac')
 
 #(yval, k14alpha, s15alpha) = ('24', '4', '0')
 (yval, k14alpha, s15alpha) = ('40', '0', '0')
@@ -53,7 +57,7 @@ with open('data/kobayashi06snyields.txt','r') as k06yields:
         lifetime.append(lifetime[k06startindex-1] * ((mass/initMass[k06startindex-1]) ** (-3.0)))
         metallicity.append(0.001)
         yields.append(OrderedDict({}))
-    
+
     for line in k06yields:
         if line.startswith("0.001"):
             row = line.split()
@@ -61,7 +65,7 @@ with open('data/kobayashi06snyields.txt','r') as k06yields:
                 for i in range(len(k06masslist)):
                     ejectaMass.append(k06masslist[i] - float(row[i+2]))
             elif row[1] != "M_final_":
-                
+
                 if row[1] in ['p','d']:
                     speciesname = row[1]
                 else:
@@ -117,5 +121,5 @@ with open('yields.txt', 'w') as fileout:
                 if i == k06startindex:
                     print("Warning '" + species + "' undefined for Kobayashi+2006 models")
             fileout.write(("%14.6e" % yieldout).rjust(14))
- 
+
         fileout.write("\n")

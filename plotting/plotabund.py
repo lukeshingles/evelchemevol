@@ -52,7 +52,9 @@ for i in range(len(columnlist)):
         label = column
 #        label = '[{0}/Fe]'.format(column)
 
-    ax.plot(data['time'], yvalues, color=colors[(i) % 6], marker='o', markersize=0, lw=1, linestyle=linestyle[int((i)/len(colors)) % 4], label=label)
+    ax.plot(data['time'], yvalues, color=colors[(i) % 6], marker='o',
+            markersize=0, lw=1, linestyle=linestyle[int((i)/len(colors)) % 4],
+            label=label)
 
 #ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
 
