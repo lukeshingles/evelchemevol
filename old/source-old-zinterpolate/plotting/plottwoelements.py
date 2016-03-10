@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-import math
 import sys
-import numpy as np
 
 for i in range(2):
     fig = plt.figure(figsize=(6, 6))
@@ -25,7 +22,7 @@ for i in range(2):
         axisx = "[Fe/H]"
         xmin = -0.85
         xmax = 0.8
-        
+
     xvalues = []
     yvalues = []
 
