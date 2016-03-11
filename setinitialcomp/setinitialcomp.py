@@ -32,17 +32,7 @@ with open('solar_abund_Asplund09.dat','r') as solarinfile:
 
 #targetlogxtofe is absolute, not relative to solar!
 
-zfactor = 10 ** -0.98
-# NGC2808 Y-poor star 09120269-6452313 from Andy Casey's fits table
-# [Fe/H] is about ~-1.26
-# logxtofe = log epsilon(X) - log epsilon(Fe)
-targetlogxtofe = { 'y': 0.6  - 6.24, #Y2
-                  'zr': 2.41 - 6.24, #Zr1
-                  'ba': 0.76 - 6.24, #Ba2
-                  'la': 0.02 - 6.24, #La2
-                  'ce': 0.09 - 6.24, #Ce2
-                  'nd': 0.41  - 6.24, #Nd2
-                 }
+from ngc2808 import *
 
 """
 zfactor = 10 ** -1.66
