@@ -30,65 +30,67 @@ with open('solar_abund_Asplund09.dat','r') as solarinfile:
                 elcode = 'h'
             elsolarlogepsilon[elcode] = float(row[3])
 
+zfactor = 0.02
+targetlogxtofe = {}
 #targetlogxtofe is absolute, not relative to solar!
 
-from ngc2808 import *
+if False:
+    from ngc2808 import *
 
-"""
-zfactor = 10 ** -1.66
-# M2 r-only group mean abundances (Yong et al. 2014)
-# [Fe/H] is about ~-1.68
-# logxtofe = log epsilon(X) - log epsilon(Fe)
-targetlogxtofe = { 'o': 7.43 - 5.83,
-                  'na': 4.63 - 5.83,
-                  'mg': 6.30 - 5.83,
-                  'al': 5.22 - 5.83,
-                  'sr': 0.63 - 5.83,
-                   'y': 0.36 - 5.83,
-                  'zr': 1.17 - 5.83, # this is Zr II, also need to add Zr I?
-                  'ba': 0.69 - 5.83,
-                  'la':-0.47 - 5.83,
-                  'ce':-0.10 - 5.83,
-                  'pr':-0.88 - 5.83,
-                  'nd':-0.10 - 5.83,
-                  'pb': 0.15 - 5.83
-                 }
-"""
-"""
-zfactor = 10 ** -1.92
-# mean of s-poor population in NGC5286
-# from Marino et al. (2015) 2015MNRAS.450..815M
-# [Fe/H] = -1.92
-# log X/Fe = [X/Fe] + log(X/Fe)_solar
-targetlogxtofe = { 'o': 0.58 + elsolarlogepsilon['o']  - elsolarlogepsilon['fe'],
-                  'na': 0.18 + elsolarlogepsilon['na'] - elsolarlogepsilon['fe'],
-                   'y': -0.04 +elsolarlogepsilon['y']  - elsolarlogepsilon['fe'],
-                  'zr': 0.17 + elsolarlogepsilon['zr'] - elsolarlogepsilon['fe'],
-                  'ba': 0.03 + elsolarlogepsilon['ba'] - elsolarlogepsilon['fe'],
-                  'la': 0.29 + elsolarlogepsilon['la'] - elsolarlogepsilon['fe'],
-                  'ce': 0.24 + elsolarlogepsilon['ce'] - elsolarlogepsilon['fe'],
-                  'pr': 0.38 + elsolarlogepsilon['pr'] - elsolarlogepsilon['fe'],
-                  'nd': 0.20 + elsolarlogepsilon['nd'] - elsolarlogepsilon['fe']
-                  }
-"""
-"""
-zfactor = 10 ** -1.92
-# Smith et al. (2000) ROA 219 in Omega Centauri
-# [Fe/H] is about ~-1.7
-#logxtofe = log epsilon(X) - log epsilon(Fe)
-targetlogxtofe = {'rb': 1.34 - 6.25,
-                   'y': 1.15 - 6.25,
-                  'zr': 2.01 - 6.25,
-                  'ba': 1.88 - 6.25,
-                  'la': 0.75 - 6.25,
-                  'ce': 0.42 - 6.25,
-                  'pb': 0.40 + elsolarlogepsilon['pb'] - elsolarlogepsilon['fe'] #D'Orazi+2011 Leiden 60066
-                  }
-"""
+if True:
+    zfactor = 10 ** -1.66
+    # M2 r-only group mean abundances (Yong et al. 2014)
+    # [Fe/H] is about ~-1.68
+    # logxtofe = log epsilon(X) - log epsilon(Fe)
+    targetlogxtofe = { 'o': 7.43 - 5.83,
+                      'na': 4.63 - 5.83,
+                      'mg': 6.30 - 5.83,
+                      'al': 5.22 - 5.83,
+                      'sr': 0.63 - 5.83,
+                       'y': 0.36 - 5.83,
+                      'zr': 1.17 - 5.83, # this is Zr II, also need to add Zr I?
+                      'ba': 0.69 - 5.83,
+                      'la':-0.47 - 5.83,
+                      'ce':-0.10 - 5.83,
+                      'pr':-0.88 - 5.83,
+                      'nd':-0.10 - 5.83,
+                      'pb': 0.15 - 5.83
+                     }
+
+if False:
+    zfactor = 10 ** -1.92
+    # mean of s-poor population in NGC5286
+    # from Marino et al. (2015) 2015MNRAS.450..815M
+    # [Fe/H] = -1.92
+    # log X/Fe = [X/Fe] + log(X/Fe)_solar
+    targetlogxtofe = { 'o': 0.58 + elsolarlogepsilon['o']  - elsolarlogepsilon['fe'],
+                      'na': 0.18 + elsolarlogepsilon['na'] - elsolarlogepsilon['fe'],
+                       'y': -0.04 +elsolarlogepsilon['y']  - elsolarlogepsilon['fe'],
+                      'zr': 0.17 + elsolarlogepsilon['zr'] - elsolarlogepsilon['fe'],
+                      'ba': 0.03 + elsolarlogepsilon['ba'] - elsolarlogepsilon['fe'],
+                      'la': 0.29 + elsolarlogepsilon['la'] - elsolarlogepsilon['fe'],
+                      'ce': 0.24 + elsolarlogepsilon['ce'] - elsolarlogepsilon['fe'],
+                      'pr': 0.38 + elsolarlogepsilon['pr'] - elsolarlogepsilon['fe'],
+                      'nd': 0.20 + elsolarlogepsilon['nd'] - elsolarlogepsilon['fe']
+                      }
+
+if False:
+    zfactor = 10 ** -1.92
+    # Smith et al. (2000) ROA 219 in Omega Centauri
+    # [Fe/H] is about ~-1.7
+    #logxtofe = log epsilon(X) - log epsilon(Fe)
+    targetlogxtofe = {'rb': 1.34 - 6.25,
+                       'y': 1.15 - 6.25,
+                      'zr': 2.01 - 6.25,
+                      'ba': 1.88 - 6.25,
+                      'la': 0.75 - 6.25,
+                      'ce': 0.42 - 6.25,
+                      'pb': 0.40 + elsolarlogepsilon['pb'] - elsolarlogepsilon['fe'] #D'Orazi+2011 Leiden 60066
+                      }
+
 
 #calculate zfactor based on outputmetallicity
 #zfactor = outputmetallicity / solarmetallicity
-
 #or calculate outputmetallicity based on zfactor
 outputmetallicity = zfactor * solarmetallicity
 
@@ -132,7 +134,7 @@ for elcode in refelnumberfrac:
         else:
             print(consolelineout)
 
-# process the reference compositon and produce the output by
+# read the reference composition and produce the output by
 # applying the scaling factors
 with open('initial_comp_solar_a0.dat','r') as infile:
     with open('initial_comp.dat','w') as outfile:
