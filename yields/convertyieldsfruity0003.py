@@ -8,7 +8,13 @@ elements = ['']+[line.split()[1] for line in open('data/atomic_symbols.dat')]
 
 #(yval, k14alpha, s15alpha) = ('24', '4', '0')
 
-yieldfilenames = ['yields_tot_m1p5z3m4_000_20140820_73609.txt','yields_tot_m2p0z3m4_000_20140820_73609.txt','yields_tot_m2p5z3m4_000_20140820_73609.txt','yields_tot_m3p0z3m4_000_20140820_73609.txt','yields_tot_m4p0z3m4_000_20140820_73609.txt','yields_tot_m5p0z3m4_000_20140820_73609.txt','yields_tot_m6p0z3m4_000_20140820_73609.txt']
+yieldfilenames = ['yields_tot_m1p5z3m4_000_20140820_73609.txt',
+                  'yields_tot_m2p0z3m4_000_20140820_73609.txt',
+                  'yields_tot_m2p5z3m4_000_20140820_73609.txt',
+                  'yields_tot_m3p0z3m4_000_20140820_73609.txt',
+                  'yields_tot_m4p0z3m4_000_20140820_73609.txt',
+                  'yields_tot_m5p0z3m4_000_20140820_73609.txt',
+                  'yields_tot_m6p0z3m4_000_20140820_73609.txt']
 modelNames = list(map(lambda x: x.split('_')[2],yieldfilenames))
 initMass = [1.5, 2.0, 2.5, 3, 4, 5, 6]
 
