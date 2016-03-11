@@ -50,13 +50,13 @@ with open('data/fishlock-z001-20140503/lifetimes.dat','r') as flifetimes:
                 lifetime[m] = float(linesplit[1])
 
 for m in range(len(agbYieldFiles)):
-        with open('data/fishlock-z001-20140503/' + agbYieldFiles[m],'r') as fyields:
-            print("reading " + agbYieldFiles[m])
-            for line in fyields:
-                if not line.startswith("#") and not line.startswith("  species"):
-                    linesplit = line.split()
-                    yields[m][linesplit[0]] = float(linesplit[3]) #absolute yield
-                    ejectaMass[m] += float(linesplit[3])
+    with open('data/fishlock-z001-20140503/' + agbYieldFiles[m],'r') as fyields:
+        print("reading " + agbYieldFiles[m])
+        for line in fyields:
+            if not line.startswith("#") and not line.startswith("  species"):
+                linesplit = line.split()
+                yields[m][linesplit[0]] = float(linesplit[3]) #absolute yield
+                ejectaMass[m] += float(linesplit[3])
 
 with open('yields.txt', 'w') as fileout:
     print("writing yields.txt")
