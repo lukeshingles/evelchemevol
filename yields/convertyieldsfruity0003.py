@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 from collections import OrderedDict
-import struct
-import glob
+#import glob
 import os
 
 elements = ['']+[line.split()[1] for line in open('data/atomic_symbols.dat')]
