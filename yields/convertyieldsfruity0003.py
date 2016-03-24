@@ -80,10 +80,10 @@ with open('yields.txt', 'w') as fileout:
 
     for i in range(len(modelNames)):
         fileout.write((chr(ord('A') + i) + ':' + modelNames[i]).ljust(25)[:25])
-        fileout.write(("%6.2f" % initMass[i]).rjust(14))   # mass
-        fileout.write(("%6.2e" % metallicity[i]).rjust(14))   # metallicity
-        fileout.write(("%6.3f" % (initMass[i]  - ejectaMass[i])).rjust(14))   # remnant mass
-        fileout.write(("%.6e" % lifetime[i]).rjust(14))
+        fileout.write(("{0:6.2f}".format(initMass[i])).rjust(14))   # mass
+        fileout.write(("{0:6.2e}".format(metallicity[i])).rjust(14))   # metallicity
+        fileout.write(("{0:6.3f}".format((initMass[i]  - ejectaMass[i]))).rjust(14))   # remnant mass
+        fileout.write(("{0:.6e}".format(lifetime[i])).rjust(14))
         fileout.write("\n")
 
     fileout.write("\n" + "#species".ljust(8))
@@ -108,6 +108,6 @@ with open('yields.txt', 'w') as fileout:
                 yieldout = yields[i][species]
             else:
                 yieldout = 0.0
-            fileout.write(("%14.6e" % yieldout).rjust(14))
+            fileout.write(("{0:14.6e}".format(yieldout)).rjust(14))
 
         fileout.write("\n")
