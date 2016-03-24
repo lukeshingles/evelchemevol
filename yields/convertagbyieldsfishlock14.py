@@ -46,7 +46,7 @@ with open('data/fishlock-z001-20140503/lifetimes.dat','r') as flifetimes:
     for line in flifetimes:
         linesplit = line.split()
         for m in range(len(initMass)):
-            if "%1.2f" % initMass[m] == linesplit[0]:
+            if "{0:1.2f}".format(initMass[m]) == linesplit[0]:
                 lifetime[m] = float(linesplit[1])
 
 for m in range(len(agbYieldFiles)):
@@ -71,10 +71,10 @@ with open('yields.txt', 'w') as fileout:
 
     for i in range(len(agbModelNames)):
         fileout.write((agbModelNames[i]).ljust(25))
-        fileout.write(("%6.2f" % float(agbModelNames[i][1:5].rstrip('z'))).rjust(14)) # mass
-        fileout.write(("%6.2e" % 0.001).rjust(14)) # metallicity
-        fileout.write(("%6.3f" % (initMass[i]  - ejectaMass[i])).rjust(14))   # remnant mass
-        fileout.write(("%.6e" % lifetime[i]).rjust(14))
+        fileout.write(("{0:6.2f}".format(float(agbModelNames[i][1:5].rstrip('z')))).rjust(14)) # mass
+        fileout.write(("{0:6.2e}".format(0.001)).rjust(14)) # metallicity
+        fileout.write(("{0:6.3f}".format((initMass[i]  - ejectaMass[i]))).rjust(14))   # remnant mass
+        fileout.write(("{0:.6e}".format(lifetime[i])).rjust(14))
         fileout.write("\n")
 
     fileout.write("\n" + "#species".ljust(8))
@@ -95,6 +95,6 @@ with open('yields.txt', 'w') as fileout:
             fileout.write("relative".rjust(10))
 
         for i in range(len(yields)):
-            fileout.write(("%14.6e" % yields[i][species]).rjust(14))
+            fileout.write(("{0:14.6e}".format(yields[i][species])).rjust(14))
 
         fileout.write("\n")
