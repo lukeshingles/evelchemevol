@@ -31,8 +31,7 @@ lifetime = [
 ]
 
 
-
-for m in range(len(modelNames)):
+for m, modelname in enumerate(modelNames):
     evmodelname = modelNames[m].split('a')[0]
 
     with open(os.path.join('data/fruity-z0003',yieldfilenames[m]),'r') as fyields:

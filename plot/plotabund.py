@@ -31,7 +31,7 @@ with open('out-abundances.txt','rb') as f:
             print header_row
             data = {x:[] for x in header_row}
         elif len(header_row) > 1 and len(row) >= len(header_row) and float(row[1]) > 0.0:
-            for i in range(len(header_row)):
+            for i, header in enumerate(header_row):
                 if i == 1:
                     # don't plot every data point
                     #if len(data[0]) > 0 and math.log10(float(row[0]) * 10 ** -6) < data[0][-1] + 0.01:

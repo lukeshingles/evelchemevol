@@ -39,7 +39,7 @@ for i in range(1):
         row = line.split()
         if row[0].startswith("#"):
             header_row = row
-            for i in range(len(header_row)):
+            for i, header in enumerate(header_row):
                 if header_row[i] == axisx:
                     axisxnum = i
                 if header_row[i] == axisy:

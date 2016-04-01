@@ -16,7 +16,7 @@ with open('out-cemodel.txt','rb') as f:
             data = {x:[] for x in header_row}
         elif len(header_row) > 1 and len(row) >= len(header_row):
             if float(row[1]) != 0.0:
-                for i in range(len(header_row)):
+                for i, header in enumerate(header_row):
                     if i == 1:
                         #if len(data[0]) > 0 and float(row[0]) != 0.0:
                             #if math.log10(float(row[i]) * 10 ** -6) < data[0][-1] + 0.01:

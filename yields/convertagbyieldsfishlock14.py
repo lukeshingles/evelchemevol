@@ -37,10 +37,10 @@ else:
     'yields-m7.0z001.dat')
 agbModelNames = [x[7:-4] for x in agbYieldFiles]
 
-yields = [OrderedDict({}) for k in range(len(agbModelNames))]
-ejectaMass = [0.0 for k in range(len(agbModelNames))]
-initMass = [float(agbModelNames[k][1:].split('z')[0]) for k in range(len(agbModelNames))]
-lifetime = [0.0 for k in range(len(agbModelNames))]
+yields = [OrderedDict({}) for k in agbModelNames]
+ejectaMass = [0.0 for k in agbModelNames]
+initMass = [float(agbmodelname[1:].split('z')[0]) for agbmodelname in agbModelNames]
+lifetime = [0.0 for k in agbModelNames]
 
 with open('data/fishlock-z001-20140503/lifetimes.dat','r') as flifetimes:
     for line in flifetimes:
