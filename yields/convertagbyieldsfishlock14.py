@@ -45,8 +45,8 @@ lifetime = [0.0 for k in agbModelNames]
 with open('data/fishlock-z001-20140503/lifetimes.dat','r') as flifetimes:
     for line in flifetimes:
         linesplit = line.split()
-        for m in range(len(initMass)):
-            if "{0:1.2f}".format(initMass[m]) == linesplit[0]:
+        for m, init_mass_value in enumerate(initMass):
+            if "{0:1.2f}".format(init_mass_value) == linesplit[0]:
                 lifetime[m] = float(linesplit[1])
 
 for m in range(len(agbYieldFiles)):

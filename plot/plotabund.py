@@ -42,8 +42,7 @@ with open('out-abundances.txt','rb') as f:
 
 colors = ['black','r','g','blue','purple','orange']
 linestyle = ['-','--','-.',':']
-for i in range(len(columnlist)):
-    column = columnlist[i]
+for i, column in enumerate(columnlist):
     if column.startswith('['):
         yvalues = data[column]
         label = column
