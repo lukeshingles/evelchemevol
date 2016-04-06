@@ -4,7 +4,7 @@ from collections import OrderedDict
 elements = ['']+[line.split()[1] for line in open('data/atomic_symbols.dat')]
 
 if False:
-    agbYieldFiles = ('yields-m1.0z001.pmz2e-3.dat',
+    yield_files = ('yields-m1.0z001.pmz2e-3.dat',
     'yields-m1.25z001.pmz2e-3.dat',
     'yields-m1.5z001.pmz2e-3.dat',
     'yields-m2.0z001.pmz2e-3.dat',
@@ -20,7 +20,7 @@ if False:
     'yields-m6.0z001.dat',
     'yields-m7.0z001.dat')
 else:
-    agbYieldFiles = ('yields-m1.0z001.pmz2e-3.dat',
+    yield_files = ('yields-m1.0z001.pmz2e-3.dat',
     'yields-m1.25z001.pmz2e-3.dat',
     'yields-m1.5z001.pmz2e-3.dat',
     'yields-m2.0z001.pmz2e-3.dat',
@@ -35,7 +35,7 @@ else:
     'yields-m5.0z001.dat',
     'yields-m6.0z001.dat',
     'yields-m7.0z001.dat')
-model_names = [x[7:-4] for x in agbYieldFiles]
+model_names = [x[7:-4] for x in yield_files]
 
 yields = [OrderedDict({}) for k in model_names]
 ejecta_masses = [0.0 for k in model_names]
@@ -49,7 +49,7 @@ with open('data/fishlock-z001-20140503/lifetimes.dat','r') as flifetimes:
             if "{0:1.2f}".format(init_mass_value) == linesplit[0]:
                 lifetimes[m] = float(linesplit[1])
 
-for m, agb_yield_file in enumerate(agbYieldFiles):
+for m, agb_yield_file in enumerate(yield_files):
     with open('data/fishlock-z001-20140503/' + agb_yield_file,'r') as fyields:
         print("reading " + agb_yield_file)
         for line in fyields:
