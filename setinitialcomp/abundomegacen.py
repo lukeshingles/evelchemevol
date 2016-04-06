@@ -1,3 +1,5 @@
+from abundsolar import elsolarlogepsilon
+
 zfactor = 10 ** -1.92
 # Smith et al. (2000) ROA 219 in Omega Centauri
 # [Fe/H] is about ~-1.7

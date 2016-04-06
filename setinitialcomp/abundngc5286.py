@@ -1,3 +1,5 @@
+from abundsolar import elsolarlogepsilon
+
 zfactor = 10 ** -1.92
 # mean of s-poor population in NGC5286
 # from Marino et al. (2015) 2015MNRAS.450..815M

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import collections
 import math
+from abundsolar import solarmetallicity, elsolarlogepsilon
 
 while True:
     userinput = input('Enter helium mass fraction: Y=0.')
@@ -18,30 +19,14 @@ while True:
 
 elfactor = {}
 
-# read the solar elemental abundances
-solarmetallicity = 0.015
-elsolarlogepsilon = {}
-with open('solar_abund_Asplund09.dat','r') as solarinfile:
-    for line in solarinfile:
-        if len(line.split(' ')) >= 4:
-            row = [line[0:4], line[4:8], line[8:16], line[16:24]]
-            elcode = row[1].strip(' ')
-            if elcode == 'p' and int(row[0]) == 1:
-                elcode = 'h'
-            elsolarlogepsilon[elcode] = float(row[3])
-
 zfactor = 0.02
 targetlogxtofe = {}
 #targetlogxtofe is absolute, not relative to solar!
 
-if False:
-    from abundngc2808 import zfactor, targetlogxtofe
-if True:
-    from abundm2 import zfactor, targetlogxtofe
-if False:
-    from abundngc5286 import zfactor, targetlogxtofe
-if False:
-    from abundomegacen import zfactor, targetlogxtofe
+#from abundngc2808 import zfactor, targetlogxtofe
+from abundm2 import zfactor, targetlogxtofe
+#from abundngc5286 import zfactor, targetlogxtofe
+#from abundomegacen import zfactor, targetlogxtofe
 
 
 #calculate zfactor based on outputmetallicity
