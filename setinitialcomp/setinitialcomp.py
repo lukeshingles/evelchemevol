@@ -35,7 +35,7 @@ targetlogxtofe = {}
 #targetlogxtofe is absolute, not relative to solar!
 
 if False:
-    from ngc2808 import *
+    from ngc2808 import zfactor, targetlogxtofe
 
 if True:
     zfactor = 10 ** -1.66

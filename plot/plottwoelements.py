@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-import math
+#from matplotlib.lines import Line2D
+#import math
 import sys
-import numpy as np
+#import numpy as np
 
 for i in range(1):
     fig = plt.figure(figsize=(6, 6))

@@ -16,10 +16,10 @@ model_names = [s.format(yval,k14alpha,s15alpha) for s in [
                         'm5z0006y{0}a{2}s320',
                         'm6z0006y{0}a{2}s320']]
 yields = [OrderedDict({}) for k in model_names]
-ejecta_mass = [0.0 for k in model_names]
-init_mass = [float(model_name[1:].split('z')[0]) for model_name in model_names]
-lifetime = [0.0 for k in model_names]
-metallicity = [0.0 for k in model_names]
+ejecta_masses = [0.0 for k in model_names]
+initial_masses = [float(model_name[1:].split('z')[0]) for model_name in model_names]
+lifetimes = [0.0 for k in model_names]
+metallicities = [0.0 for k in model_names]
 
 customlifetimes = {'m1.7z0006y24':  1.4355016E+09,
                    'm2.36z0006y24': 5.4127692E+08,
@@ -36,19 +36,20 @@ customlifetimes = {'m1.7z0006y24':  1.4355016E+09,
 
 for m,modelname in enumerate(model_names):
     evmodelname = model_names[m].split('a')[0]
-    metallicity[m] = 0.0006
+    metallicities[m] = 0.0006
     if evmodelname in customlifetimes:
-        lifetime[m] = customlifetimes[evmodelname]
+        lifetimes[m] = customlifetimes[evmodelname]
     else:
         print("Fatal error: Lifetime needed for model '{:}'".format(model_names[m]))
         sys.exit()
         """"
-        with open("/Users/lukes/Dropbox/Papers (first author)/2015 He-enhanced IMAGB Stars/generateplots/evolution/" + evmodelname + "/evall.dat", mode='rb') as evfile: #or did you mean evall.dat?
+        with open("/Users/lukes/Dropbox/Papers (first author)/2015 He-enhanced IMAGB Stars/generateplots/evolution/"
+                  + evmodelname + "/evall.dat", mode='rb') as evfile: #or did you mean evall.dat?
             fileContent = evfile.read()
 
             bytepos = range(20,len(fileContent)-16,268)[-1]
-            lifetime[m] = struct.unpack("<d", fileContent[bytepos+4:bytepos+12])[0]
-            #print("                   '{:}':    {:13.7E},".format(evmodelname,lifetime[m]))
+            lifetimes[m] = struct.unpack("<d", fileContent[bytepos+4:bytepos+12])[0]
+            #print("                   '{:}':    {:13.7E},".format(evmodelname,lifetimes[m]))
         """
 
     with open('data/shinglesetal2015/' + modelname + '/yields.txt','r') as fyields:
@@ -61,7 +62,7 @@ for m,modelname in enumerate(model_names):
                     yields[m][row[0]] = float(row[3]) #absolute yield
                 else:
                     yields[m][row[0]] = float(row[2]) #relative yield
-                ejecta_mass[m] += float(row[3])
+                ejecta_masses[m] += float(row[3])
 
 with open('data/kobayashi06snyields.txt','r') as k06yields:
     print("reading kobayashi06snyields.txt")
@@ -70,9 +71,9 @@ with open('data/kobayashi06snyields.txt','r') as k06yields:
     k06masslist = [13,15,18,20,25,30,40]
     for mass in k06masslist:
         model_names.append('k06-m{0:d}'.format(mass))
-        init_mass.append(float(mass))
-        lifetime.append(lifetime[k06startindex-1] * ((mass/init_mass[k06startindex-1]) ** (-3.0)))
-        metallicity.append(0.001)
+        initial_masses.append(float(mass))
+        lifetimes.append(lifetimes[k06startindex-1] * ((mass/initial_masses[k06startindex-1]) ** (-3.0)))
+        metallicities.append(0.001)
         yields.append(OrderedDict({}))
 
     for line in k06yields:
@@ -80,7 +81,7 @@ with open('data/kobayashi06snyields.txt','r') as k06yields:
             row = line.split()
             if row[1] == "M_cut_":
                 for i,k06mass in enumerate(k06masslist):
-                    ejecta_mass.append(k06mass - float(row[i+2]))
+                    ejecta_masses.append(k06mass - float(row[i+2]))
             elif row[1] != "M_final_":
                 if row[1] in ['p','d']:
                     speciesname = row[1]
@@ -102,11 +103,11 @@ with open('yields.txt', 'w') as fileout:
     fileout.write(str(len(model_names)) + "\n")
 
     for i,model_name in enumerate(model_names):
-        fileout.write((chr(ord('A') + i) + ':' + model_names[i]).ljust(25)[:25])
-        fileout.write(("{0:6.2f}".format(init_mass[i])).rjust(14))   # mass
-        fileout.write(("{0:6.2e}".format(metallicity[i])).rjust(14))   # metallicity
-        fileout.write(("{0:6.3f}".format((init_mass[i]  - ejecta_mass[i]))).rjust(14))   # remnant mass
-        fileout.write(("{0:.6e}".format(lifetime[i])).rjust(14))
+        fileout.write((chr(ord('A') + i) + ':' + model_name).ljust(25)[:25])
+        fileout.write(("{0:6.2f}".format(initial_masses[i])).rjust(14))   # mass
+        fileout.write(("{0:6.2e}".format(metallicities[i])).rjust(14))   # metallicity
+        fileout.write(("{0:6.3f}".format((initial_masses[i]  - ejecta_masses[i]))).rjust(14))   # remnant mass
+        fileout.write(("{0:.6e}".format(lifetimes[i])).rjust(14))
         fileout.write("\n")
 
     fileout.write("\n" + "#species".ljust(8))

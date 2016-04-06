@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
+#from matplotlib.lines import Line2D
 import math
-import sys
+#import sys
 
 fig = plt.figure(figsize=(6, 6))
 

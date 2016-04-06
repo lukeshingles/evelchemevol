@@ -14,13 +14,13 @@ yieldfilenames = ['yields_tot_m1p5z3m4_000_20140820_73609.txt',
                   'yields_tot_m4p0z3m4_000_20140820_73609.txt',
                   'yields_tot_m5p0z3m4_000_20140820_73609.txt',
                   'yields_tot_m6p0z3m4_000_20140820_73609.txt']
-modelNames = list(map(lambda x: x.split('_')[2],yieldfilenames))
-initMass = [1.5, 2.0, 2.5, 3, 4, 5, 6]
+model_names = list(map(lambda x: x.split('_')[2],yieldfilenames))
+initial_masses = [1.5, 2.0, 2.5, 3, 4, 5, 6]
 
-yields = [OrderedDict({}) for k in range(len(modelNames))]
-ejectaMass = [0.0 for k in range(len(modelNames))]
-metallicity = [3e-4 for k in range(len(modelNames))]
-lifetime = [
+yields = [OrderedDict({}) for k in model_names]
+ejecta_masses = [0.0 for k in model_names]
+metallicities = [3e-4 for k in model_names]
+lifetimes = [
     1.85e9, #1.5 Msun
     8.46e8, #2.0 Msun
     4.92e8, #2.5 Msun
@@ -31,8 +31,8 @@ lifetime = [
 ]
 
 
-for m, modelname in enumerate(modelNames):
-    evmodelname = modelNames[m].split('a')[0]
+for m, modelname in enumerate(model_names):
+    evmodelname = model_names[m].split('a')[0]
 
     with open(os.path.join('data/fruity-z0003',yieldfilenames[m]),'r') as fyields:
         print("reading " + yieldfilenames[m])
@@ -53,7 +53,7 @@ for m, modelname in enumerate(modelNames):
 
             massnumber = int(row[1])    #(A) the number of nucleons
             massyield = float(row[3])   #absolute stellar yield in solar masses
-            ejectaMass[m] += massyield
+            ejecta_masses[m] += massyield
 
             speciesname = '{:}{:d}'.format(elmsymbol.lower(),massnumber)
 
@@ -75,20 +75,20 @@ with open('yields.txt', 'w') as fileout:
     fileout.write("remnantmass".rjust(14))
     fileout.write("lifetime".rjust(14))
     fileout.write("\n[stellarmodels]\n")
-    fileout.write(str(len(modelNames)) + "\n")
+    fileout.write(str(len(model_names)) + "\n")
 
-    for i in range(len(modelNames)):
-        fileout.write((chr(ord('A') + i) + ':' + modelNames[i]).ljust(25)[:25])
-        fileout.write(("{0:6.2f}".format(initMass[i])).rjust(14))   # mass
-        fileout.write(("{0:6.2e}".format(metallicity[i])).rjust(14))   # metallicity
-        fileout.write(("{0:6.3f}".format((initMass[i]  - ejectaMass[i]))).rjust(14))   # remnant mass
-        fileout.write(("{0:.6e}".format(lifetime[i])).rjust(14))
+    for i,model_name in enumerate(model_names):
+        fileout.write((chr(ord('A') + i) + ':' + model_name).ljust(25)[:25])
+        fileout.write(("{0:6.2f}".format(initial_masses[i])).rjust(14))   # mass
+        fileout.write(("{0:6.2e}".format(metallicities[i])).rjust(14))   # metallicity
+        fileout.write(("{0:6.3f}".format((initial_masses[i]  - ejecta_masses[i]))).rjust(14))   # remnant mass
+        fileout.write(("{0:.6e}".format(lifetimes[i])).rjust(14))
         fileout.write("\n")
 
     fileout.write("\n" + "#species".ljust(8))
     fileout.write("type".rjust(10))
-    for m in range(len(modelNames)):
-#        shortname = (modelNames[m].split('z')[0] + 'y' + modelNames[m].split('y')[1])
+    for m,model_name in enumerate(model_names):
+#        shortname = (model_names[m].split('z')[0] + 'y' + model_names[m].split('y')[1])
 #        shortname = shortname.split('s')[0]
 #        fileout.write(shortname.rjust(14)[:14])
         fileout.write(chr(ord('A') + m).rjust(14))

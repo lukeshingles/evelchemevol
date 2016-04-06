@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import matplotlib.pyplot as plt
-import sys
+#import sys
 import os
 
 fig, ax = plt.subplots(1, figsize=(5,3.5), sharex=True, tight_layout={"pad":0.3})
