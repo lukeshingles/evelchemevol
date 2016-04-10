@@ -102,9 +102,9 @@ with open('yields.txt', 'w') as fileout:
         elcode = species.rstrip('0123456789').title()
         fileout.write("absolute".rjust(10))
 
-        for i in range(len(yields)):
-            if species in yields[i]:
-                yieldout = yields[i][species]
+        for yields_one_model in yields:
+            if species in yields_one_model:
+                yieldout = yields_one_model[species]
             else:
                 yieldout = 0.0
             fileout.write(("{0:14.6e}".format(yieldout)).rjust(14))
