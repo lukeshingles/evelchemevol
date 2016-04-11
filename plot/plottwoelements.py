@@ -10,7 +10,7 @@ for i in range(1):
 
     ax = fig.add_axes([0.12, 0.12, 0.84, 0.84])
     if i == 0:
-        fileSuffix = "Pb-Fe"
+        file_suffix = "Pb-Fe"
         axisy = "[Pb/Fe]"
         ymin = -3.0
         ymax = 3.0
@@ -18,7 +18,7 @@ for i in range(1):
         xmin = -1.0
         xmax = 2.5
     elif i == 1:
-        fileSuffix = "La-Fe"
+        file_suffix = "La-Fe"
         axisy = "[La/Fe]"
         ymin = -0.5
         ymax = 2.5
@@ -74,5 +74,5 @@ for i in range(1):
     #ax.set_xlim(xmin,xmax)
     #ax.set_ylim(ymin,ymax)
 
-    fig.savefig('cemodel-' + fileSuffix + '.pdf',format='pdf')
+    fig.savefig('cemodel-' + file_suffix + '.pdf',format='pdf')
     plt.close()
