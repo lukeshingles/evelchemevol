@@ -1,0 +1,294 @@
+GFORTRAN module version '10' created from cemodel.f90
+MD5:5c972f13513349337b8a18aed1e203bf -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () ()
+() () () ())
+
+()
+
+(('evmodelatonemassonemetallicitydata' 'cemodel' 2) ('evmodeldataonemass'
+'cemodel' 3) ('modelstate' 'cemodel' 4) ('speciestype' 'cemodel' 5))
+
+()
+
+()
+
+()
+
+(2 'Evmodelatonemassonemetallicitydata' 'cemodel' '' 1 ((DERIVED
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOC_COMP) (UNKNOWN 0 0
+0 0 UNKNOWN ()) 0 0 () () 0 ((6 'fetoh' (REAL 8 0 0 0 REAL ()) () (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (7 'remnantmass' (REAL 8 0 0 0 REAL ()) () (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (8 'yield' (REAL 8 0 0 0 REAL ()) (1 0 DEFERRED () ())
+(UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOCATABLE
+DIMENSION) UNKNOWN-ACCESS ()) (9 'speciesmasslost' (REAL 8 0 0 0 REAL ())
+(1 0 DEFERRED () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 ALLOCATABLE DIMENSION) UNKNOWN-ACCESS ())) PUBLIC (() () ()
+()) () 0 0 43869658)
+3 'Evmodeldataonemass' 'cemodel' '' 1 ((DERIVED UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOC_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ())
+0 0 () () 0 ((10 'z' (DERIVED 2 0 0 0 DERIVED ()) (1 0 DEFERRED () ()) (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOCATABLE
+DIMENSION) UNKNOWN-ACCESS (STRUCTURE (DERIVED 2 0 0 0 DERIVED ()) 0 ((()
+()) (() ()) ((NULL (REAL 8 0 0 0 REAL ()) 0) ()) ((NULL (REAL 8 0 0 0
+REAL ()) 0) ())) ())) (11 'mass' (REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()))
+PUBLIC (() () () ()) () 0 0 56986416)
+4 'Modelstate' 'cemodel' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 ALLOC_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0
+((12 'time' (REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (13 'gasmass' (
+REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0) UNKNOWN-ACCESS ()) (14 'starsmass' (REAL 8 0 0 0 REAL ()) ()
+(UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (15 'fetoh' (REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (16
+'speciesmassfrac' (REAL 8 0 0 0 REAL ()) (1 0 DEFERRED () ()) (
+UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOCATABLE
+DIMENSION) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 22348992)
+5 'Speciestype' 'cemodel' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 ((17
+'symbol' (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
+INTEGER ()) 0 '3'))) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0) UNKNOWN-ACCESS ()) (18 'z' (INTEGER 4 0 0 0 INTEGER ()) ()
+(UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0)
+UNKNOWN-ACCESS ()) (19 'a' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()))
+PUBLIC (() () () ()) () 0 0 90240478)
+20 '__convert_r4_r8' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 FUNCTION ELEMENTAL PURE) (REAL 8 0 0 0
+REAL ()) 0 0 () () 20 () () () 0 0)
+21 'cemodel' 'cemodel' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+22 'cemodelsetup' 'cemodelsetup' '' 1 ((MODULE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+23 'dserbydmass' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 24 0 (25 26) () 23 ()
+() () 0 0)
+27 'dserbydmassofspecies' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 28 0 (29
+30 31) () 27 () () () 0 0)
+32 'evmodel' 'cemodel' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (DERIVED 3 0 0 0
+DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+33 'evmodelatonemassonemetallicitydata' 'cemodel' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN
+0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+34 'evmodeldataonemass' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
+()) 0 0 () () 0 () () () 0 0)
+35 'imf' 'cemodelsetup' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL ()) 36 0 (37) ()
+35 () () () 0 0)
+38 'imfnormfactor' 'cemodelsetup' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+39 'integral' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 40 0 (41 42
+43 44 45 46 47 48 49) () 39 () () () 0 0)
+50 'logepsilon' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL ()) 51 0 (
+52) () 50 () () () 0 0)
+53 'maxstellarmass' 'cemodelsetup' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+54 'maxtimestep' 'cemodelsetup' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (
+CONSTANT (REAL 8 0 0 0 REAL ()) 0 '0.17700000000000@4') () 0 () () () 0
+0)
+55 'minstellarmass' 'cemodelsetup' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+56 'mintimestep' 'cemodelsetup' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (
+CONSTANT (REAL 8 0 0 0 REAL ()) 0 '0.a0000000000000@1') () 0 () () () 0
+0)
+57 'model' 'cemodel' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (DERIVED 4 0 0 0 DERIVED ()) 0
+0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+58 'modelstate' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+59 'pastfetoh' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL ()) 60 0 (
+61) () 59 () () () 0 0)
+62 'pastspeciesmassfrac' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL
+()) 63 0 (64 65) () 62 () () () 0 0)
+66 'remnantmass' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL ()) 67 0 (
+68) () 66 () () () 0 0)
+69 'sermaxerror' 'cemodelsetup' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (
+CONSTANT (REAL 8 0 0 0 REAL ()) 0 '0.10c6f7a0b5ed8d@-4') () 0 () () () 0
+0)
+70 'sortevmodels' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 ()
+() () 0 0)
+71 'species' 'cemodel' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION) (DERIVED 5 0 0 0
+DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+72 'speciesmasslost' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 73 0 (74
+75 76) () 72 () () () 0 0)
+77 'speciesmasslostatfetoh' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 78 0 (79
+80 81) () 77 () () () 0 0)
+82 'speciestype' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+83 'starformationrate' 'cemodelsetup' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL
+()) 84 0 (85) () 83 () () () 0 0)
+86 'stellarejectionrate' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 87 0 (88)
+() 86 () () () 0 0)
+89 'stellarejectionrateofspecies' 'cemodel' '' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL
+()) 90 0 (91 92) () 89 () () () 0 0)
+93 'stellarlifetime' 'cemodelsetup' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL
+()) 94 0 (95) () 93 () () () 0 0)
+96 'stellarmasshigh' 'cemodelsetup' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+97 'stellarmasslow' 'cemodelsetup' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+98 'stepnum' 'cemodel' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () ()
+() 0 0)
+99 'strlowcase' 'stringutility' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (CHARACTER 1 0 0 0
+CHARACTER ((FUNCTION (INTEGER 4 0 0 0 INTEGER ()) 0 100 (('' (VARIABLE (
+CHARACTER 1 0 0 0 CHARACTER (())) 0 101 ())) ('' ())) '__len_1_i4' 0 'len')))
+102 0 (101) () 103 () () () 0 0)
+104 'strupcase' 'stringutility' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (CHARACTER 1 0 0 0
+CHARACTER ((FUNCTION (INTEGER 4 0 0 0 INTEGER ()) 0 105 (('' (VARIABLE (
+CHARACTER 1 0 0 0 CHARACTER (())) 0 106 ())) ('' ())) '__len_1_i4' 0 'len')))
+107 0 (106) () 108 () () () 0 0)
+109 'timestep' 'cemodel' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0
+0)
+110 'yield' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC DECL
+UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 111 0 (112 113 114) () 110
+() () () 0 0)
+115 'yieldatfetoh' 'cemodel' '' 1 ((PROCEDURE UNKNOWN-INTENT MODULE-PROC
+DECL UNKNOWN 0 0 FUNCTION) (REAL 8 0 0 0 REAL ()) 116 0 (117 118 119) ()
+115 () () () 0 0)
+25 'mdash' '' '' 24 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+26 'time' '' '' 24 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+29 'mdash' '' '' 28 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+30 'speciesnum' '' '' 28 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+31 'time' '' '' 28 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+37 'mass' '' '' 36 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+41 'f' '' '' 40 ((PROCEDURE UNKNOWN-INTENT DUMMY-PROC UNKNOWN UNKNOWN 0
+0 EXTERNAL DUMMY FUNCTION) (REAL 8 0 0 0 REAL ()) 0 0 () () 41 () () ()
+0 0)
+42 'x1' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+43 'x2' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+44 'numstepsguess' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+45 'maxerror' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+46 'errorout' '' '' 40 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+OPTIONAL DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+47 'intarg' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+OPTIONAL DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+48 'realarg' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+OPTIONAL DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+49 'label' '' '' 40 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+OPTIONAL DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () ()
+0 0)
+52 'symbol' '' '' 51 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+61 'time' '' '' 60 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+64 'time' '' '' 63 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+65 'species' '' '' 63 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+68 'initmass' '' '' 67 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+74 'species' '' '' 73 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+75 'initmass' '' '' 73 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+76 'fetoh' '' '' 73 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+79 'species' '' '' 78 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+80 'modelnum' '' '' 78 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+81 'fetoh' '' '' 78 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+85 'time' '' '' 84 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+88 'time' '' '' 87 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+91 'time' '' '' 90 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+92 'speciesnum' '' '' 90 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+95 'mass' '' '' 94 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+100 'len' '(intrinsic)' '' 102 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 100
+() () () 0 0)
+101 'input_string' '' '' 102 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+103 'output_string' '' '' 102 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 RESULT) (CHARACTER 1 0 0 0 CHARACTER ((FUNCTION (
+INTEGER 4 0 0 0 INTEGER ()) 0 100 (('' (VARIABLE (CHARACTER 1 0 0 0
+CHARACTER (())) 0 101 ())) ('' ())) '__len_1_i4' 0 'len'))) 0 0 () () 0
+() () () 0 0)
+105 'len' '(intrinsic)' '' 107 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 105
+() () () 0 0)
+106 'input_string' '' '' 107 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
+0 0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+108 'output_string' '' '' 107 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 RESULT) (CHARACTER 1 0 0 0 CHARACTER ((FUNCTION (
+INTEGER 4 0 0 0 INTEGER ()) 0 105 (('' (VARIABLE (CHARACTER 1 0 0 0
+CHARACTER (())) 0 106 ())) ('' ())) '__len_1_i4' 0 'len'))) 0 0 () () 0
+() () () 0 0)
+112 'species' '' '' 111 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+113 'initmass' '' '' 111 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+114 'fetoh' '' '' 111 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+117 'species' '' '' 116 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+118 'modelnum' '' '' 116 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+119 'fetoh' '' '' 116 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+)
+
+('Evmodelatonemassonemetallicitydata' 0 2 'Evmodeldataonemass' 0 3
+'Modelstate' 0 4 'Speciestype' 0 5 '__convert_r4_r8' 0 20 'cemodel' 0 21
+'cemodelsetup' 0 22 'dserbydmass' 0 23 'dserbydmassofspecies' 0 27
+'evmodel' 0 32 'evmodelatonemassonemetallicitydata' 0 33
+'evmodeldataonemass' 0 34 'imf' 0 35 'imfnormfactor' 0 38 'integral' 0
+39 'logepsilon' 0 50 'maxstellarmass' 0 53 'maxtimestep' 0 54
+'minstellarmass' 0 55 'mintimestep' 0 56 'model' 0 57 'modelstate' 0 58
+'pastfetoh' 0 59 'pastspeciesmassfrac' 0 62 'remnantmass' 0 66
+'sermaxerror' 0 69 'sortevmodels' 0 70 'species' 0 71 'speciesmasslost'
+0 72 'speciesmasslostatfetoh' 0 77 'speciestype' 0 82 'starformationrate'
+0 83 'stellarejectionrate' 0 86 'stellarejectionrateofspecies' 0 89
+'stellarlifetime' 0 93 'stellarmasshigh' 0 96 'stellarmasslow' 0 97
+'stepnum' 0 98 'strlowcase' 0 99 'strupcase' 0 104 'timestep' 0 109
+'yield' 0 110 'yieldatfetoh' 0 115)
