@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import matplotlib.pyplot as plt
 #from matplotlib.lines import Line2D
 #import math
@@ -34,7 +34,7 @@ for i in range(1):
     axisxnum = -1
     axisynum = -1
 
-    f = open('out-abundances.txt','rb')
+    f = open('out-abundances.txt','r')
     for line in f.readlines():
         row = line.split()
         if row[0].startswith("#"):
@@ -44,11 +44,11 @@ for i in range(1):
                     axisxnum = i
                 if header_row[i] == axisy:
                     axisynum = i
-                    print i
+                    print(i)
             if axisxnum == -1 or axisynum == -1:
-                print "Columns not found"
+                print("Columns not found")
                 sys.exit(1)
-            print header_row[axisynum] + " vs. " + header_row[axisxnum]
+            print(header_row[axisynum] + " vs. " + header_row[axisxnum])
         elif axisxnum != -1 and axisynum != -1 and len(row) >= len(header_row):
             xvalues.append(float(row[axisxnum]))
             yvalues.append(float(row[axisynum]))

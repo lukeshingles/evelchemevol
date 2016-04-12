@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import matplotlib.pyplot as plt
 #import sys
 import os
@@ -7,12 +7,12 @@ fig, ax = plt.subplots(1, figsize=(5,3.5), sharex=True, tight_layout={"pad":0.3}
 
 header_row = []
 
-with open('out-cemodel.txt','rb') as f:
+with open('out-cemodel.txt','r') as f:
     for line in f:
         row = line.split()
         if row[0].startswith("#"):
             header_row = row
-            print header_row
+            print(header_row)
             data = {x:[] for x in header_row}
         elif len(header_row) > 1 and len(row) >= len(header_row):
             if float(row[1]) != 0.0:
