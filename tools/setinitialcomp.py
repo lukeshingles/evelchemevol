@@ -23,11 +23,10 @@ zfactor = 0.02
 targetlogxtofe = {}
 #targetlogxtofe is absolute, not relative to solar!
 
-#from abundngc2808 import zfactor, targetlogxtofe
-from abundm2 import zfactor, targetlogxtofe
-#from abundngc5286 import zfactor, targetlogxtofe
-#from abundomegacen import zfactor, targetlogxtofe
-
+#from initialcompdata.abundngc2808 import zfactor, targetlogxtofe
+from initialcompdata.abundm2 import zfactor, targetlogxtofe
+#from initialcompdata.abundngc5286 import zfactor, targetlogxtofe
+#from initialcompdata.abundomegacen import zfactor, targetlogxtofe
 
 #calculate zfactor based on outputmetallicity
 #zfactor = outputmetallicity / solarmetallicity

@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
-#from matplotlib.lines import Line2D
 #import math
 import sys
 #import numpy as np
