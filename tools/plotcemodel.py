@@ -13,21 +13,20 @@ with open('out-cemodel.txt','r') as f:
             header_row = row
             print(header_row)
             data = {x:[] for x in header_row}
-        elif len(header_row) > 1 and len(row) >= len(header_row):
-            if float(row[1]) != 0.0:
-                for i, header in enumerate(header_row):
-                    if i == 1:
-                        #if len(data[0]) > 0 and float(row[0]) != 0.0:
-                            #if math.log10(float(row[i]) * 10 ** -6) < data[0][-1] + 0.01:
-                            #    break
-                        data[header_row[i]].append(float(row[i]))
+        elif len(header_row) > 1 and len(row) >= len(header_row) and float(row[1]) != 0.0:
+            for i, header in enumerate(header_row):
+                if i == 1:
+                    #if len(data[0]) > 0 and float(row[0]) != 0.0:
+                        #if math.log10(float(row[i]) * 10 ** -6) < data[0][-1] + 0.01:
+                        #    break
+                    data[header_row[i]].append(float(row[i]))
+                else:
+                    if i > 0 and not "E" in row[i]:
+                        row[header_row[i]] = 0.00
+                    if header_row[i].startswith("["):
+                        data[header_row[i]].append(10 ** float(row[i]))
                     else:
-                        if i > 0 and not "E" in row[i]:
-                            row[header_row[i]] = 0.00
-                        if header_row[i].startswith("["):
-                            data[header_row[i]].append(10 ** float(row[i]))
-                        else:
-                            data[header_row[i]].append(max(float(row[i]),10**-30))
+                        data[header_row[i]].append(max(float(row[i]),10 ** -30))
 
 for i in range(2,len(data)):
     column = header_row[i]
