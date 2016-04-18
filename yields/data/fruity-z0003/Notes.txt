@@ -1,6 +1,9 @@
+Yields downloaded from
+http://fruity.oa-teramo.inaf.it/modelli.pl
+
 [Fe/H] = - 1.7
 With [alpha/Fe]=0.5, the actual metallicity is Z=0.0007
 
-Used in Straniero et al. (2014)
+Used in Straniero, Cristallo, and Piersanti (2014)
 
 1p5 means 1.5 solar masses

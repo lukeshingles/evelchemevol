@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import collections
 import math
-from abundsolar import solarmetallicity, elsolarlogepsilon
+from solarabundances import solarmetallicity, elsolarlogepsilon
 
 while True:
     userinput = input('Enter helium mass fraction: Y=0.')
