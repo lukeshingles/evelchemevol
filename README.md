@@ -1,8 +1,8 @@
 # Evel Chemevol
-A simple one-zone chemical evolution code
+A one-zone closed-box chemical evolution code
 
 This is a place to store the chemical evolution code used in Shingles et al. (2014) and Shingles (2015, thesis).
-No guarantees are made about its functionality or usefulness to outsiders.
+No guarantees are made about its functionality or usefulness to others.
 
 Files in the yields directory are all sourced from either publications, open online databases, or my own data.
 
