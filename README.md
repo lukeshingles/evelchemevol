@@ -1,5 +1,5 @@
 # Evel Chemevol
-A one-zone closed-box chemical evolution code
+A one-zone closed-box chemical evolution code written in Fortran with OpenMP.
 
 This is a place to store the chemical evolution code used in Shingles et al. (2014) and Shingles (2015, thesis).
 No guarantees are made about its functionality or usefulness to others.
