@@ -23,6 +23,7 @@ zfactor = 0.02
 targetlogxtofe = {}
 #targetlogxtofe is absolute, not relative to solar!
 
+#from initialcompdata.abundngc1851 import zfactor, targetlogxtofe
 #from initialcompdata.abundngc2808 import zfactor, targetlogxtofe
 from initialcompdata.abundm2 import zfactor, targetlogxtofe
 #from initialcompdata.abundngc5286 import zfactor, targetlogxtofe
@@ -88,7 +89,7 @@ with open('initial_comp_solar_a0.dat','r') as infile:
                 row[1] = '{0:14.4E}'.format(float(row[1])*elfactor[elcode]*zfactor)
             else:
                 row[1] = '{0:14.4E}'.format(float(row[1])*zfactor)
-            
+
             outfile.write("".join(row) + "\n")
 #            if elcode not in targetxtofe:
 #                refelnumberfrac[elcode] = 0.0
