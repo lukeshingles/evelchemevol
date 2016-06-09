@@ -42,15 +42,14 @@ for m,modelname in enumerate(model_names):
     else:
         print("Fatal error: Lifetime needed for model '{:}'".format(model_names[m]))
         sys.exit()
-        """"
-        with open("/Users/lukes/Dropbox/Papers (first author)/2015 He-enhanced IMAGB Stars/generateplots/evolution/"
-                  + evmodelname + "/evall.dat", mode='rb') as evfile: #or did you mean evall.dat?
-            fileContent = evfile.read()
 
-            bytepos = range(20,len(fileContent)-16,268)[-1]
-            lifetimes[m] = struct.unpack("<d", fileContent[bytepos+4:bytepos+12])[0]
-            #print("                   '{:}':    {:13.7E},".format(evmodelname,lifetimes[m]))
-        """
+        # with open("/Users/lukes/Dropbox/Papers (first author)/2015 He-enhanced IMAGB Stars/generateplots/evolution/"
+        #           + evmodelname + "/evall.dat", mode='rb') as evfile: #or did you mean evall.dat?
+        #     fileContent = evfile.read()
+        #
+        #     bytepos = range(20,len(fileContent)-16,268)[-1]
+        #     lifetimes[m] = struct.unpack("<d", fileContent[bytepos+4:bytepos+12])[0]
+        #     #print("                   '{:}':    {:13.7E},".format(evmodelname,lifetimes[m]))
 
     with open('data/shinglesetal2015/' + modelname + '/yields.txt','r') as fyields:
         print("reading " + modelname)
