@@ -433,7 +433,7 @@ subroutine sortstellarmodels()
         minkeyvalue = stellarmodel(i)%mass
         do j = i+1,size(stellarmodel)
             if (stellarmodel(i)%mass == stellarmodel(j)%mass) then
-                write(14,*),"ERROR: multiple ev. models with same mass",stellarmodel(i)%mass
+                write(14,*) "ERROR: multiple ev. models with same mass",stellarmodel(i)%mass
                 stop
             end if
             if (stellarmodel(j)%mass < minkeyvalue) then
