@@ -290,7 +290,7 @@ pure real*8 function stellarejectionrateofspecies(time, speciesnum)
         maxerrorser, intarg=speciesnum, realarg=time, label='ser species mass integral')
 end function
 
-! D stellar ejection rate / D mass of species 
+! D stellar ejection rate / D mass of species
 pure real*8 function dserbydmassofspecies(mdashexp, time, speciesnum)
     implicit none
     real*8, intent(in) :: mdashexp
@@ -375,7 +375,7 @@ pure recursive function integral(f,x1,x2,numsteps,maxerror,intarg,realarg,label,
         end if
     end do
     !!$omp end parallel do
-    
+
     integralresult = sum * stepsize * (1.d0/6.d0)
     loworderintegral = sumloworder * stepsize * 0.5d0
     error = abs(loworderintegral/integralresult - 1.0d0)
@@ -455,7 +455,7 @@ subroutine initconfig()
 
     write(14,'(A)') 'reading config file...'
     open(unit=114, file=trim(filespath) // "config.txt", action="read", status="old")
-    
+
     do while (.true.)
         read(114,'(A45)',iostat=ios) configline
         if (IS_IOSTAT_END(ios)) exit
