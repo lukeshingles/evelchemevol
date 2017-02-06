@@ -10,7 +10,7 @@ while True:
         break
     print("Invalid input")
 
-#while True:
+# while True:
 #    userinput = input('Enter metallicity: Z=0.')
 #    outputmetallicity = float('0.'+userinput)
 #    if userinput.isdigit() and 0.0 <= outputmetallicity <= 100.0:
@@ -21,28 +21,28 @@ elfactor = {}
 
 zfactor = 0.02
 targetlogxtofe = {}
-#targetlogxtofe is absolute, not relative to solar!
+# targetlogxtofe is absolute, not relative to solar!
 
-#from initialcompdata.abundngc1851 import zfactor, targetlogxtofe
-#from initialcompdata.abundngc2808 import zfactor, targetlogxtofe
+# from initialcompdata.abundngc1851 import zfactor, targetlogxtofe
+# from initialcompdata.abundngc2808 import zfactor, targetlogxtofe
 from initialcompdata.abundm2 import zfactor, targetlogxtofe
-#from initialcompdata.abundngc5286 import zfactor, targetlogxtofe
-#from initialcompdata.abundomegacen import zfactor, targetlogxtofe
+# from initialcompdata.abundngc5286 import zfactor, targetlogxtofe
+# from initialcompdata.abundomegacen import zfactor, targetlogxtofe
 
-#calculate zfactor based on outputmetallicity
-#zfactor = outputmetallicity / solarmetallicity
-#or calculate outputmetallicity based on zfactor
+# calculate zfactor based on outputmetallicity
+# zfactor = outputmetallicity / solarmetallicity
+# or calculate outputmetallicity based on zfactor
 outputmetallicity = zfactor * solarmetallicity
 
 outputhydrogenfrac = (1.0 - outputheliumfrac - outputmetallicity)
 
 # read the reference isotopic composition
 refelnumberfrac = collections.OrderedDict()
-with open('initial_comp_solar_a4.dat','r') as infile:
+with open('initial_comp_solar_a4.dat', 'r') as infile:
     for line in infile:
         row = [line[0:7], line[7:21], line[21:28]]
         elcode = row[0].strip(' 0123456789')
-        if row[0].strip(' ') in ['p','d']:
+        if row[0].strip(' ') in ['p', 'd']:
             elcode = 'h'
 
         if elcode not in refelnumberfrac:
@@ -76,8 +76,8 @@ for elcode in refelnumberfrac:
 
 # read the reference composition and produce the output by
 # applying the scaling factors
-with open('initial_comp_solar_a0.dat','r') as infile:
-    with open('initial_comp.dat','w') as outfile:
+with open('initial_comp_solar_a0.dat', 'r') as infile:
+    with open('initial_comp.dat', 'w') as outfile:
         for line in infile:
             row = [line[0:7], line[7:21], line[21:28]]
             elcode = row[0].strip(' 0123456789')

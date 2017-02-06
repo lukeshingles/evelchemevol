@@ -4,7 +4,8 @@ import matplotlib.ticker as ticker
 import os
 
 # Asplund et al. 2009 ARAA (CHECK AGAINST PAPER)
-solarabund = {'pm': -9.0, 'tc': -9.0, 'er': 0.92, 'rh': 1.06, 'gd': 1.05,
+solarabund = {
+    'pm': -9.0, 'tc': -9.0, 'er': 0.92, 'rh': 1.06, 'gd': 1.05,
     'pb': 2.04, 'te': 2.18, 'sm': 0.94, 'au': 0.8, 'po': -9.0, 'pt': 1.62,
     'sb': 1.01, 'lu': 0.09, 'ru': 1.76, 'ag': 1.2, 'ga': 3.08, 'ne': 7.97,
     'ce': 1.58, 's': 7.15, 'mo': 1.94, 'zr': 2.53, 'kr': 3.25, 'na': 6.24,
@@ -19,35 +20,35 @@ solarabund = {'pm': -9.0, 'tc': -9.0, 'er': 0.92, 'rh': 1.06, 'gd': 1.05,
     'p': 5.41, 'sr': 2.88, 'ge': 3.58, 'tm': 0.12, 'fe': 7.54, 'mg': 7.64,
     'in': 0.76, 'be': 1.3, 'pr': 0.76, 'cl': 5.23, 'nb': 1.41, 'zn': 4.63}
 
-fig, ax = plt.subplots(1, figsize=(5,3.5), sharex=True, tight_layout={"pad":0.3})
+fig, ax = plt.subplots(1, figsize=(5, 3.5), sharex=True, tight_layout={"pad": 0.3})
 
 header_row = []
-columnlist =['[Fe/H]','O','Na','Rb','Y','Zr','Ba','La','Ce','Nd']
-with open('out-abundances.txt','r') as f:
+columnlist = ['[Fe/H]', 'O', 'Na', 'Rb', 'Y', 'Zr', 'Ba', 'La', 'Ce', 'Nd']
+with open('out-abundances.txt', 'r') as f:
     for line in f:
         row = line.split()
         if row[0].startswith("#"):
             header_row = row
             print(header_row)
-            data = {x:[] for x in header_row}
+            data = {x: [] for x in header_row}
         elif len(header_row) > 1 and len(row) >= len(header_row) and float(row[1]) > 0.0:
             for i, header in enumerate(header_row):
                 if i == 1:
                     # don't plot every data point
-                    #if len(data[0]) > 0 and math.log10(float(row[0]) * 10 ** -6) < data[0][-1] + 0.01:
+                    # if len(data[0]) > 0 and math.log10(float(row[0]) * 10 ** -6) < data[0][-1] + 0.01:
                     #    break
                     data[header_row[i]].append(float(row[i]))
                 else:
                     data[header_row[i]].append(float(row[i]))
 
-colors = ['black','r','g','blue','purple','orange']
-linestyle = ['-','--','-.',':']
+colors = ['black', 'r', 'g', 'blue', 'purple', 'orange']
+linestyle = ['-', '--', '-.', ':']
 for i, column in enumerate(columnlist):
     if column.startswith('['):
         yvalues = data[column]
         label = column
     else:
-        yvalues = [X - Fe - (solarabund[column.lower()] - solarabund['fe']) for (X,Fe) in zip(data[column],data['Fe'])]
+        yvalues = [X - Fe - (solarabund[column.lower()] - solarabund['fe']) for (X, Fe) in zip(data[column], data['Fe'])]
         label = column
 #        label = '[{0}/Fe]'.format(column)
 
@@ -55,19 +56,19 @@ for i, column in enumerate(columnlist):
             markersize=0, lw=1, linestyle=linestyle[int((i)/len(colors)) % 4],
             label=label)
 
-#ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
+# ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
 
 fs = 9
 
 ax.set_title(os.getcwd().split('/')[-1])
-ax.legend(loc='best',handlelength=2.5,frameon=False,ncol=2,prop={'size':fs})
+ax.legend(loc='best', handlelength=2.5, frameon=False, ncol=2, prop={'size': fs})
 
 ax.yaxis.set_minor_locator(ticker.MultipleLocator(base=0.1))
 ax.yaxis.set_major_locator(ticker.MultipleLocator(base=0.5))
 
 plt.setp(plt.getp(plt.gca(), 'xticklabels'), fontsize=fs)
 plt.setp(plt.getp(plt.gca(), 'yticklabels'), fontsize=fs)
-#ax.set_aspect(0.4)
+# ax.set_aspect(0.4)
 
 ax.set_xlabel("time [years]", labelpad=8, fontsize=fs)
 ax.set_ylabel('[X/Fe]', labelpad=8, fontsize=fs)
@@ -75,5 +76,5 @@ ax.set_ylabel('[X/Fe]', labelpad=8, fontsize=fs)
 ax.set_xlim(xmin=1e7)
 ax.set_xscale('log')
 
-fig.savefig('cemodel-abund.pdf',format='pdf')
+fig.savefig('cemodel-abund.pdf', format='pdf')
 plt.close()

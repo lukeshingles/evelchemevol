@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
-#import math
+# import math
 import sys
-#import numpy as np
+# import numpy as np
 
 for i in range(1):
     fig = plt.figure(figsize=(6, 6))
@@ -33,7 +33,7 @@ for i in range(1):
     axisxnum = -1
     axisynum = -1
 
-    f = open('out-abundances.txt','r')
+    f = open('out-abundances.txt', 'r')
     for line in f.readlines():
         row = line.split()
         if row[0].startswith("#"):
@@ -51,27 +51,27 @@ for i in range(1):
         elif axisxnum != -1 and axisynum != -1 and len(row) >= len(header_row):
             xvalues.append(float(row[axisxnum]))
             yvalues.append(float(row[axisynum]))
-            #print header_row[axisynum+1]
-    #print yvalues[0]
-    #for i in range(1,len(header_row)):
+            # print header_row[axisynum+1]
+    # print yvalues[0]
+    # for i in range(1,len(header_row)):
     #    colors = ['r','g','b','orange','black','purple']
     ax.plot(xvalues, yvalues, color='black', marker='None', lw=1.5)
     ax.plot(xvalues[0], yvalues[0], color='blue', marker='o', markersize=6,
-            markeredgewidth=0,label="Initial")
+            markeredgewidth=0, label="Initial")
 
-    #ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
+    # ax.set_ylim(min(filter(lambda x: x>10**-20,y_arr[i]))/1.5,max(y_arr[i])*1.5)
 
-    #ax.legend(loc=3,handlelength=2)
+    # ax.legend(loc=3,handlelength=2)
 
     fs = 10
-    #plt.setp(plt.getp(plt.gca(), 'xticklabels'), fontsize=fs)
-    #plt.setp(plt.getp(plt.gca(), 'yticklabels'), fontsize=fs)
+    # plt.setp(plt.getp(plt.gca(), 'xticklabels'), fontsize=fs)
+    # plt.setp(plt.getp(plt.gca(), 'yticklabels'), fontsize=fs)
 
     ax.set_xlabel(axisx, labelpad=8, fontsize=fs)
     ax.set_ylabel(axisy, labelpad=8, fontsize=fs)
 
-    #ax.set_xlim(xmin,xmax)
-    #ax.set_ylim(ymin,ymax)
+    # ax.set_xlim(xmin,xmax)
+    # ax.set_ylim(ymin,ymax)
 
-    fig.savefig('cemodel-' + file_suffix + '.pdf',format='pdf')
+    fig.savefig('cemodel-' + file_suffix + '.pdf', format='pdf')
     plt.close()
