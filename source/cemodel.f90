@@ -574,7 +574,9 @@ subroutine inityields()
     open(unit=7, file=trim(filespath) // 'yields.txt', action="read", status="old", access="sequential", form="formatted")
     read(7,*,iostat=ios)
     startmodellist = ""
-    do while (startmodellist /= "[stellarmodels]")
+    ! [stellarmodels] and [evmodels] indicate the start of the same table,
+    ! just named inconsistently between some of yield files
+    do while (startmodellist /= "[stellarmodels]" .AND. startmodellist /= "[evmodels]")
         read(7,*) startmodellist
     end do
     read(7,*) stellarmodelcount
