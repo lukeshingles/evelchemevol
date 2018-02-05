@@ -1,3 +1,5 @@
 echemevol
 *.mod
 __pycache__
+.dropbox
+Icon
